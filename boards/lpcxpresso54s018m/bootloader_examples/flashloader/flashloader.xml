@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ksdk:examples xmlns:ksdk="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd manifest.xsd">
+  <externalDefinitions>
+    <definition extID="com.nxp.mcuxpresso"/>
+    <definition extID="component.lists.LPC54S018M"/>
+    <definition extID="component.osa.LPC54S018M"/>
+    <definition extID="device.LPC54S018M_CMSIS.LPC54S018M"/>
+    <definition extID="middleware.baremetal.LPC54S018M"/>
+    <definition extID="middleware.mcu-boot.LPC54S018M_sources.LPC54S018M"/>
+    <definition extID="middleware.mcu-boot.LPC54S018M_startup.LPC54S018M"/>
+    <definition extID="middleware.mcu-boot.bootsources.LPC54S018M"/>
+    <definition extID="middleware.mcu-boot.bootsources_lpc.LPC54S018M"/>
+    <definition extID="middleware.mcu-boot.drv_microseconds.LPC54S018M"/>
+    <definition extID="middleware.mcu-boot.drv_spifi.LPC54S018M"/>
+    <definition extID="middleware.mcu-boot.interface_aes_otp.LPC54S018M"/>
+    <definition extID="middleware.mcu-boot.interface_otp.LPC54S018M"/>
+    <definition extID="middleware.mcu-boot.src_bm_usb.LPC54S018M"/>
+    <definition extID="middleware.mcu-boot.src_startup.LPC54S018M"/>
+    <definition extID="middleware.usb.device.LPC54S018M"/>
+    <definition extID="middleware.usb.device_controller_ip3511fs.LPC54S018M"/>
+    <definition extID="platform.Include_common.LPC54S018M"/>
+    <definition extID="platform.Include_core_cm4.LPC54S018M"/>
+    <definition extID="platform.Include_dsp.LPC54S018M"/>
+    <definition extID="platform.drivers.clock.LPC54S018M"/>
+    <definition extID="platform.drivers.common.LPC54S018M"/>
+    <definition extID="platform.drivers.flexcomm.LPC54S018M"/>
+    <definition extID="platform.drivers.flexcomm_i2c.LPC54S018M"/>
+    <definition extID="platform.drivers.flexcomm_spi.LPC54S018M"/>
+    <definition extID="platform.drivers.flexcomm_usart.LPC54S018M"/>
+    <definition extID="platform.drivers.inputmux.LPC54S018M"/>
+    <definition extID="platform.drivers.inputmux_connections.LPC54S018M"/>
+    <definition extID="platform.drivers.lpc_crc.LPC54S018M"/>
+    <definition extID="platform.drivers.lpc_iocon.LPC54S018M"/>
+    <definition extID="platform.drivers.otp.LPC54S018M"/>
+    <definition extID="platform.drivers.power.LPC54S018M"/>
+    <definition extID="platform.drivers.puf.LPC54S018M"/>
+    <definition extID="platform.drivers.reset.LPC54S018M"/>
+    <definition extID="iar"/>
+    <definition extID="mdk"/>
+    <definition extID="armgcc"/>
+    <definition extID="mcuxpresso"/>
+  </externalDefinitions>
+  <example id="lpcxpresso54s018m_flashloader" name="flashloader" category="bootloader_examples" dependency="device.LPC54S018M_CMSIS.LPC54S018M platform.drivers.clock.LPC54S018M platform.drivers.power.LPC54S018M platform.drivers.reset.LPC54S018M platform.drivers.flexcomm.LPC54S018M platform.drivers.flexcomm_usart.LPC54S018M platform.drivers.flexcomm_spi.LPC54S018M platform.drivers.flexcomm_i2c.LPC54S018M platform.drivers.inputmux.LPC54S018M platform.drivers.lpc_crc.LPC54S018M platform.drivers.lpc_iocon.LPC54S018M platform.drivers.otp.LPC54S018M platform.drivers.puf.LPC54S018M middleware.mcu-boot.LPC54S018M_startup.LPC54S018M middleware.mcu-boot.src_bm_usb.LPC54S018M middleware.mcu-boot.bootsources.LPC54S018M middleware.mcu-boot.bootsources_lpc.LPC54S018M middleware.mcu-boot.LPC54S018M_sources.LPC54S018M middleware.usb.device_controller_ip3511fs.LPC54S018M middleware.usb.device.LPC54S018M middleware.mcu-boot.src_startup.LPC54S018M middleware.mcu-boot.drv_microseconds.LPC54S018M middleware.mcu-boot.drv_spifi.LPC54S018M middleware.mcu-boot.interface_otp.LPC54S018M middleware.mcu-boot.interface_aes_otp.LPC54S018M platform.Include_core_cm4.LPC54S018M platform.Include_common.LPC54S018M platform.Include_dsp.LPC54S018M platform.drivers.common.LPC54S018M platform.drivers.inputmux_connections.LPC54S018M component.osa.LPC54S018M component.lists.LPC54S018M middleware.baremetal.LPC54S018M">
+    <projects>
+      <project type="com.crt.advproject.projecttype.exe" nature="org.eclipse.cdt.core.cnature"/>
+    </projects>
+    <toolchainSettings>
+      <toolchainSetting id_refs="com.nxp.mcuxpresso">
+        <option id="com.crt.advproject.gas.fpu" type="enum">
+          <value>com.crt.advproject.gas.fpu.fpv4.hard</value>
+        </option>
+        <option id="com.crt.advproject.gcc.fpu" type="enum">
+          <value>com.crt.advproject.gcc.fpu.fpv4.hard</value>
+        </option>
+        <option id="com.crt.advproject.c.misc.dialect" type="enum">
+          <value>com.crt.advproject.misc.dialect.gnu99</value>
+        </option>
+        <option id="com.crt.advproject.gcc.exe.debug.option.debugging.level" type="enum">
+          <value>gnu.c.debugging.level.default</value>
+        </option>
+        <option id="com.crt.advproject.gcc.exe.release.option.debugging.level" type="enum">
+          <value>gnu.c.debugging.level.default</value>
+        </option>
+        <option id="com.crt.advproject.gcc.exe.debug.option.optimization.level" type="enum">
+          <value>gnu.c.optimization.level.size</value>
+        </option>
+        <option id="com.crt.advproject.gcc.exe.release.option.optimization.level" type="enum">
+          <value>gnu.c.optimization.level.size</value>
+        </option>
+        <option id="gnu.c.compiler.option.preprocessor.def.symbols" type="stringList">
+          <value>CPU_LPC54S018M</value>
+          <value>CPU_IS_ARM_CORTEX_M4=1</value>
+          <value>USB_STACK_USE_DEDICATED_RAM=1</value>
+          <value>__SEMIHOST_HARDFAULT_DISABLE=1</value>
+          <value>BL_TARGET_RAM</value>
+          <value>USB_STACK_BM</value>
+          <value>FSL_OSA_BM_TIMER_CONFIG=FSL_OSA_BM_TIMER_NONE</value>
+          <value>CPU_LPC54S018J4MET180</value>
+        </option>
+        <option id="gnu.c.compiler.option.optimization.flags" type="string">
+          <value>-fno-common</value>
+        </option>
+        <option id="gnu.c.compiler.option.misc.other" type="string">
+          <value>-c  -ffunction-sections  -fdata-sections  -ffreestanding  -fno-builtin</value>
+        </option>
+        <option id="gnu.c.compiler.option.warnings.allwarn" type="boolean">
+          <value>false</value>
+          <value>false</value>
+        </option>
+        <option id="com.crt.advproject.link.fpu" type="enum">
+          <value>com.crt.advproject.link.fpu.fpv4.hard</value>
+        </option>
+        <option id="gnu.c.link.option.nostdlibs" type="boolean">
+          <value>true</value>
+        </option>
+        <option id="gnu.c.link.option.other" type="stringList">
+          <value>--gc-sections</value>
+          <value>-Map=${BuildArtifactFileBaseName}.map</value>
+          <value>--defsym=__ram_vector_table__=1</value>
+        </option>
+        <option id="com.crt.advproject.gas.hdrlib" type="enum">
+          <value>com.crt.advproject.gas.hdrlib.newlibnano</value>
+        </option>
+        <option id="com.crt.advproject.gas.specs" type="enum">
+          <value>com.crt.advproject.gas.specs.newlibnano</value>
+        </option>
+        <option id="com.crt.advproject.gcc.hdrlib" type="enum">
+          <value>com.crt.advproject.gcc.hdrlib.newlibnano</value>
+        </option>
+        <option id="com.crt.advproject.gcc.specs" type="enum">
+          <value>com.crt.advproject.gcc.specs.newlibnano</value>
+        </option>
+        <option id="com.crt.advproject.link.gcc.hdrlib" type="enum">
+          <value>com.crt.advproject.gcc.link.hdrlib.newlibnano.none</value>
+        </option>
+        <option id="com.crt.advproject.link.toram" type="boolean">
+          <value>true</value>
+        </option>
+      </toolchainSetting>
+    </toolchainSettings>
+    <source path="boards/lpcxpresso54s018m/bootloader_examples/flashloader/armgcc" target_path="middleware/mcu-boot" type="linker" toolchain="armgcc">
+      <files mask="LPC54S018M_ram_flashloader.ld"/>
+    </source>
+    <source path="boards/lpcxpresso54s018m/bootloader_examples/flashloader/iar" target_path="middleware/mcu-boot" type="linker" toolchain="iar">
+      <files mask="LPC54S018M_ram_flashloader.icf"/>
+    </source>
+    <source path="boards/lpcxpresso54s018m/bootloader_examples/flashloader/mcux" target_path="middleware/mcu-boot" type="linker" toolchain="mcuxpresso">
+      <files mask="LPC54S018M_ram_flashloader.ld"/>
+    </source>
+    <source path="boards/lpcxpresso54s018m/bootloader_examples/flashloader/mdk" target_path="middleware/mcu-boot" type="linker" toolchain="mdk">
+      <files mask="LPC54S018M_ram_flashloader.scf"/>
+    </source>
+    <source path="boards/lpcxpresso54s018m/bootloader_examples/flashloader" target_path="usb/device/class/hid" type="c_include">
+      <files mask="usb_device_hid.h"/>
+    </source>
+    <source path="boards/lpcxpresso54s018m/bootloader_examples/flashloader" target_path="usb/device/class/hid" type="src">
+      <files mask="usb_device_hid.c"/>
+    </source>
+    <source path="boards/lpcxpresso54s018m/bootloader_examples/flashloader" target_path="usb/device/class/msc" type="c_include">
+      <files mask="usb_device_msc.h"/>
+      <files mask="usb_device_msc_ufi.h"/>
+    </source>
+    <source path="boards/lpcxpresso54s018m/bootloader_examples/flashloader" target_path="usb/device/class/msc" type="src">
+      <files mask="usb_device_msc.c"/>
+      <files mask="usb_device_msc_ufi.c"/>
+    </source>
+    <source path="boards/lpcxpresso54s018m/bootloader_examples/flashloader" target_path="usb/device/class" type="c_include">
+      <files mask="usb_device_class.h"/>
+    </source>
+    <source path="boards/lpcxpresso54s018m/bootloader_examples/flashloader" target_path="usb/device/class" type="src">
+      <files mask="usb_device_class.c"/>
+    </source>
+    <source path="boards/lpcxpresso54s018m/bootloader_examples/flashloader" target_path="usb/device/source" type="c_include">
+      <files mask="usb_device_ch9.h"/>
+    </source>
+    <source path="boards/lpcxpresso54s018m/bootloader_examples/flashloader" target_path="usb/device/source" type="src">
+      <files mask="usb_device_ch9.c"/>
+    </source>
+  </example>
+</ksdk:examples>
